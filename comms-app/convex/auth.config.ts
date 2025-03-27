@@ -1,8 +1,8 @@
 export default {
-    providers: [
-      {
-        domain: "https://fair-elephant-13.clerk.accounts.dev",
-        applicationID: "convex",
-      },
-    ]
-  };
+  providers: [
+    {
+      domain: "https://your-issuer-url.clerk.accounts.dev/",
+      applicationID: "convex",
+    },
+  ]
+};
