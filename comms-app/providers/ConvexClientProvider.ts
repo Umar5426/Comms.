@@ -8,16 +8,18 @@ type Props = {
 };
 
 const CONVEX_URL = process.env.NEXT_PUBLIC_CONVEX_URL || "";
+const CLERK_PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || "";
 
 const convex = new ConvexReactClient(CONVEX_URL);
 
 const ConvexClientProvider = ({ children }: Props) => {
-  return(
-  <ClerkProvider publisableKey="pk_test_ZmFpci1lbGVwaGFudC0xMy5jbGVyay5hY2NvdW50cy5kZXYk">
-    <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
-    {children}
-    </ConvexProviderWithClerk>
-  </ClerkProvider>
-)};
+  return (
+    <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY}>
+      <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+        {children}
+      </ConvexProviderWithClerk>
+    </ClerkProvider>
+  );
+};
 
 export default ConvexClientProvider;
