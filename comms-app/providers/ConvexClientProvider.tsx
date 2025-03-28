@@ -9,7 +9,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const CONVEX_URL = process.env.NEXT_PUBLIC_CONVEX_URL;
+const CONVEX_URL = process.env.NEXT_PUBLIC_CONVEX_URL || '';
 const CLERK_PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 if (!CONVEX_URL || !CLERK_PUBLISHABLE_KEY) {

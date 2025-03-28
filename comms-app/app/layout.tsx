@@ -26,9 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Add a separate div inside body to ensure ConvexClientProvider is correctly wrapped */}
         <ConvexClientProvider>
-          <div>{children}</div>
+          {children}
         </ConvexClientProvider>
       </body>
     </html>
