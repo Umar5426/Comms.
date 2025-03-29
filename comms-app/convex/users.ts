@@ -4,7 +4,7 @@ import { v } from "convex/values"
 export const create = internalMutation({
     args: {
         username: v.string(),
-        imagerl: v.string(),
+        imageUrl: v.string(),
         clerkId: v.string(),
         email: v.string()
     },
