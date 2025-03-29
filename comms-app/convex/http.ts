@@ -41,35 +41,26 @@ const handleClerkWebhook = httpAction(async (ctx, req) => {
             }
         
         case "user.updated":
-        case "user.deleted":
-        case "session.created":
-        case "session.ended":
-        case "session.removed":
-        case "session.revoked":
-        case "email.created":
-        case "sms.created":
-        case "organization.created":
-        case "organization.updated":
-        case "organization.deleted":
-        case "organizationDomain.created":
-        case "organizationDomain.updated":
-        case "organizationDomain.deleted":
-        case "organizationMembership.created":
-        case "organizationMembership.deleted":
-        case "organizationMembership.updated":
-        case "organizationInvitation.accepted":
-        case "organizationInvitation.created":
-        case "organizationInvitation.revoked":
-        case "role.created":
-        case "role.updated":
-        case "role.deleted":
-        case "permission.created":
-        case "permission.updated":
-        case "permission.deleted":
-        case "waitlistEntry.created":
-        case "waitlistEntry.updated":
+        {   console.log("Creating/Updating User: ", event.data.id)
+
+            await ctx.runMutation(internal.users.create, {
+                username: `${event.data.first_name} ${event.data.last_name}`,
+                imageUrl: event.data.image_url,
+                clerkId: event.data.id,
+                email: event.data.email_addresses[0].email_address
+            })
+            break;
+        
+        }
+
+        default:
+            {console.log("Clerk Webhook event not supported, ", event.type)}
     }
-})
+
+    return new Response(null, {
+        status: 200
+    });
+});
 
 const http = httpRouter()
 
