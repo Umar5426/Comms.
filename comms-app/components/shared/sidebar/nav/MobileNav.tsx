@@ -1,6 +1,7 @@
 "use client";
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { ThemeToggle } from '@/components/ui/theme/theme-toggle';
 import { useConversation } from '@/hooks/useConversation';
 import { useNavigation } from '@/hooks/useNavigation';
 import { UserButton } from '@clerk/clerk-react';
@@ -36,6 +37,9 @@ const MobileNav = () => {
                             </Link>
                         </li>
                     ))}
+                    <li>
+                        <ThemeToggle />
+                    </li>
                     <li>
                         <UserButton />
                     </li>
