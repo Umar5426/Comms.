@@ -6,7 +6,7 @@ type Props = React.PropsWithChildren<{
     action?: React.ReactNode;
 }>
 
-const itemList = ({children, title, action: Action}: Props) => {
+const ItemList = ({children, title, action: Action}: Props) => {
   return (
     <Card className='h-full w-full lg:flex-none lg:w-80 p-2'>
         <div className='mb-4 flex items-center justify-between'>
@@ -22,4 +22,4 @@ const itemList = ({children, title, action: Action}: Props) => {
   )
 }
 
-export default itemList;
+export default ItemList;
