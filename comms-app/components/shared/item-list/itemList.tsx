@@ -18,8 +18,8 @@ const itemList = ({children, title, action: Action}: Props) => {
         <div className='w-full h-full flex flex-col items-center justify-start gap-2'>
             {children}
         </div>
-    </Card>>
+    </Card>
   )
 }
 
-export default itemList
+export default itemList;
