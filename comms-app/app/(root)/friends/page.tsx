@@ -1,10 +1,13 @@
+import ItemList from '@/components/shared/item-list/ItemList';
 import React from 'react'
 
-type Props = {}
+type Props = {};
 
 const FriendsPage = (props: Props) => {
   return (
-    <div>page</div>
+    <div>
+      <ItemList title="Friends">Friends Page</ItemList>
+    </div>
   )
 }
 
