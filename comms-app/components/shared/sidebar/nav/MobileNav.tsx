@@ -13,7 +13,7 @@ const MobileNav = () => {
     return (
         <Card className="fixed bottom-4 w-[calc(100vw-32px)] flex items-center h-16 p-2 lg:hidden">
             <nav className="w-full">
-                <ul className="flex justify-between items-center gap-2">
+                <ul className="flex justify-evenly items-center gap-2">
                     {paths.map((path, id) => (
                         <li key={id} className="relative">
                             <Link href={path.href}>
