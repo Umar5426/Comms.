@@ -1,6 +1,7 @@
 "use client";
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { ThemeToggle } from '@/components/ui/theme/theme-toggle';
 import { useNavigation } from '@/hooks/useNavigation';
 import { UserButton } from '@clerk/clerk-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@radix-ui/react-tooltip';
@@ -35,6 +36,7 @@ const DesktopNav = () => {
                 </ul>
             </nav>
             <div className='flex flex-col items-center gap-4'>
+                <ThemeToggle />
                 <UserButton/>
             </div>
         </Card>
