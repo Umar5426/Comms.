@@ -1,10 +1,10 @@
 import React from 'react'
 import { z } from 'zod';
-imprt {zodResolver} from '@hookform/resolvers/zod';
+import {zodResolver} from '@hookform/resolvers/zod';
 
 type Props = {}
 
-cosnt addFriendFormSchema = z.object;
+const addFriendFormSchema = z.object;
 
 const AddFriendDialog = (props: Props) => {
   return (
