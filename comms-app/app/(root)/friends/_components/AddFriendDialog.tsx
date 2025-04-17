@@ -24,11 +24,13 @@ import { toast } from 'sonner';
 import { ConvexError } from 'convex/values';
 
 
+type Props = {}
+
 const addFriendFormSchema = z.object({
     email: z.string().min(1, {message: 'Invalid email address'}).email({}),
 });
 
-const AddFriendDialog = () => {
+const AddFriendDialog = (props: Props) => {
 
     const {mutate: createRequest, pending} = useMutationState(api.request.create);
 
@@ -43,19 +45,19 @@ const AddFriendDialog = () => {
         })
     }
   return (
-    <Dialog>
-        <DialogTrigger asChild>
-            <Tooltip>
+        <Dialog>
+        <Tooltip>
+            <DialogTrigger asChild>
             <TooltipTrigger asChild>
                 <Button size="icon" variant="outline">
                 <UserPlus />
                 </Button>
             </TooltipTrigger>
+            </DialogTrigger>
             <TooltipContent>
-                <p>Add Friends</p>
+            <p>Add Friends</p>
             </TooltipContent>
-            </Tooltip>
-        </DialogTrigger>
+        </Tooltip>
 
 
         <DialogContent>
