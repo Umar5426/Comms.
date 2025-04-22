@@ -39,7 +39,7 @@ export const create = mutation({
         .query("requests").withIndex
         ("by_receiver_sender", q => q.eq
             ("receiver", reciever._id).eq
-            ("sender", currentUser._id))
+            ("sender", currentUser._id)).unique()
     
     if(requestAlreadySent) {
         throw new ConvexError("Request already sent")
